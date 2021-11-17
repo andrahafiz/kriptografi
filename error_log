@@ -1,0 +1,1 @@
+[04-Nov-2021 04:01:52 UTC] PHP Fatal error:  Cannot redeclare Cipher() (previously declared in /home/prastyon/public_html/kriptografi/application/views/V_Hill.php:39) in /home/prastyon/public_html/kriptografi/application/views/V_Hill.php on line 318
