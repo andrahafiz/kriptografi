@@ -33,10 +33,21 @@ class C_Atbash extends CI_Controller
     public function index()
     {
         $plaintext = strtoupper($this->input->post('plaintext'));
+        $data['text'] = $plaintext;
         if (!empty($plaintext)) {
             // echo $plaintext;
-            $data['Encode'] = $this->Encode($plaintext);
-            $data['Decode'] = $this->Decode($data['Encode']);
+            $key = $this->input->post('key');
+            $tipe = $this->input->post('tipe');
+            $data['Encode'] = NULL;
+            $data['Decode'] = NULL;
+            // die();
+
+            $data['key'] = $key;
+            if ($tipe == 'enkripsi') {
+                $data['Encode'] = $this->Encode($plaintext);
+            } else {
+                $data['Decode'] = $this->Decode($plaintext);
+            }
         } else {
             $data['Encode'] = Null;
             $data['Decode'] = Null;
@@ -69,5 +80,4 @@ class C_Atbash extends CI_Controller
     {
         return $this->Encode($input);
     }
-  
 }

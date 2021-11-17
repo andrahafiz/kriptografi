@@ -27,17 +27,8 @@
                             <div class="row" id="plaintext">
                                 <div class="col">
                                     <div class="mb-3">
-                                        <label class="form-label" for="plaintext">Plain Text</label>
-                                        <input type="text" class="form-control" name="plaintext" id="plaintext" placeholder="Plain Text" autocomplete="on" required style="text-transform:uppercase">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row" id="chippertext">
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="ChiperText">Cipher Text</label>
-                                        <input type="text" class="form-control" name="ciphertext" id="ChiperText" placeholder="Chiper Text" autocomplete="on" style="text-transform:uppercase">
+                                        <label class="form-label" for="plaintext" id="labeltext">Plain Text</label>
+                                        <input type="text" class="form-control" name="plaintext" id="plaintext" placeholder="Text" autocomplete="on" required style="text-transform:uppercase">
                                     </div>
                                 </div>
 
@@ -46,11 +37,11 @@
                                 <div class="col">
                                     <div class="form-group m-t-15 m-checkbox-inline mb-0 custom-radio-ml">
                                         <div class="radio radio-primary">
-                                            <input id="radioinline1" type="radio" name="cek" value="0">
+                                            <input id="radioinline1" type="radio" name="tipe" value="enkripsi" checked>
                                             <label class="mb-0" for="radioinline1">Enkripsi</label>
                                         </div>
                                         <div class="radio radio-primary">
-                                            <input id="radioinline2" type="radio" name="cek" value="1">
+                                            <input id="radioinline2" type="radio" name="tipe" value="dekripsi">
                                             <label class="mb-0" for="radioinline2">Deskripsi</label>
                                         </div>
                                     </div>
@@ -60,6 +51,10 @@
                                 <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <input type="submit" class="btn btn-primary" name="tombol" value="Proses" />
                                     <input class="btn btn-light" type="reset" value="Reset">
+                                </div>
+                                <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
+                                    <!-- <input class="btn btn-primary" type="submit"></input> -->
+                                    <p class="h5 txt-primary">Text : <small class="txt-dark"><?= empty($text) ? NUll : $text ?></small></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -92,3 +87,16 @@
     </div>
     <!-- Container-fluid Ends-->
 </div>
+<script type="text/javascript">
+    $('input[name="tipe"]').on("click", function() {
+        var tipe = $('input[name="tipe"]:checked').val();
+        if (tipe == "dekripsi") {
+            // alert(tipe);
+            $("#labeltext").text("Chiper Text");
+            // $("#plaintext").attr("Masukan Text Anda", "Type a Location")
+        } else {
+            $("#labeltext").text("Plain Text");
+        }
+
+    });
+</script>

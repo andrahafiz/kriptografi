@@ -23,9 +23,9 @@
                     <div class="card-body">
                         <div class="default-according" id="accordion">
                             <div class="card">
-                                <div class="card-header" id="headingOne">
+                                <div class="card-header" id="headingOne" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Materi</button>
+                                        <button class="btn btn-link">Materi</button>
                                     </h5>
                                 </div>
                                 <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordion">
@@ -70,9 +70,9 @@ x t s e x l</pre>
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="card-header" id="headingTwo">
+                                    <div class="card-header" id="headingTwo" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Enkripsi</button>
+                                            <button class="btn btn-link collapsed" id="buttondua">Enkripsi</button>
                                         </h5>
                                     </div>
                                     <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordion">
@@ -104,8 +104,8 @@ x t s e x l</pre>
                                                         <div class="row">
                                                             <div class="col-sm-12 col-xl-12">
                                                                 <div class="card card-absolute">
-                                                                    <div class="card-header bg-secondary">
-                                                                        <h5 class="text-white" style="margin-bottom:0px !important; padding-left:0px !important">Color state</h5>
+                                                                    <div class="card-header bg-primary">
+                                                                        <h5 class="text-white" style="margin-bottom:0px !important; padding-left:0px !important">Enkripsi</h5>
                                                                     </div>
                                                                     <div class="card-body">
                                                                         <!-- <p id="c" style="text-transform:uppercase"></p> -->
@@ -123,9 +123,9 @@ x t s e x l</pre>
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card-header" id="headingThree">
+                                <div class="card-header" id="headingThree" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Dekripsi</button>
+                                        <button class="btn btn-link collapsed " id="buttontiga">Dekripsi</button>
                                     </h5>
                                 </div>
                                 <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordion">
@@ -158,7 +158,7 @@ x t s e x l</pre>
                                                         <div class="col-sm-12 col-xl-12">
                                                             <div class="card card-absolute">
                                                                 <div class="card-header bg-secondary">
-                                                                    <h5 class="text-white" style="margin-bottom:0px !important; padding-left:0px !important">Color state</h5>
+                                                                    <h5 class="text-white" style="margin-bottom:0px !important; padding-left:0px !important">Dekripsi</h5>
                                                                 </div>
                                                                 <div class="card-body">
                                                                     <!-- <p id="c" style="text-transform:uppercase"></p> -->

@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/themify.css">
     <!-- Flag icon-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/flag-icon.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/mystyle.css">
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/feather-icon.css">
     <!-- Plugins css start-->
@@ -592,10 +593,6 @@
                         <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
                         <li>
                             <div class="mode"><i class="fa fa-moon-o"></i></div>
-                        </li>
-
-                        <li class="onhover-dropdown p-0">
-                            <button class="btn btn-primary-light" type="button"><a href="login_two.html"><i data-feather="log-out"></i>Log out</a></button>
                         </li>
                     </ul>
                 </div>
