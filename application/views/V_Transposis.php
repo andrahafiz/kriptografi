@@ -89,7 +89,7 @@ x t s e x l</pre>
                                                         <div class="col">
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="cipheralphabet">Key </label>
-                                                                <input type="text" class="form-control" id="key" placeholder="Keyword" name="key" autocomplete="on" required style="text-transform:uppercase">
+                                                                <input type="text" class="form-control" id="key" placeholder="Keyword" name="key" autocomplete="on" required style="text-transform:uppercase" onkeypress="return event.charCode < 48 || event.charCode  >57">
                                                             </div>
                                                         </div>
 
@@ -142,7 +142,7 @@ x t s e x l</pre>
                                                     <div class="col">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="cipheralphabet">Key </label>
-                                                            <input type="text" class="form-control" id="key2" placeholder="Keyword" name="key" autocomplete="on" required style="text-transform:uppercase">
+                                                            <input type="text" class="form-control" id="key2" placeholder="Keyword" name="key" autocomplete="on" required style="text-transform:uppercase" onkeypress="return event.charCode < 48 || event.charCode  >57">
                                                         </div>
                                                     </div>
 

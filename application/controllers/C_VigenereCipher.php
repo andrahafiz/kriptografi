@@ -21,11 +21,26 @@ class C_VigenereCipher extends CI_Controller
      */
     public function index()
     {
+        // $key = $this->input->post('key');
+        // $plaintext = strtoupper($this->input->post('text'));
+        // $data['Encipher'] = $this->Encipher($plaintext, $key);
+        // $data['Decipher'] = $this->Decipher($data['Encipher'], $key);
+        // $data['Key'] = $key;
+
         $key = $this->input->post('key');
+        $tipe = $this->input->post('tipe');
+        $data['Encipher'] = NULL;
+        $data['Decipher'] = NULL;
+        // die();
         $plaintext = strtoupper($this->input->post('text'));
-        $data['Encipher'] = $this->Encipher($plaintext, $key);
-        $data['Decipher'] = $this->Decipher($data['Encipher'], $key);
-        $data['Key'] = $key;
+        $data['text'] = $plaintext;
+        $data['key'] = $key;
+        if ($tipe == 'enkripsi') {
+            $data['Encipher'] = $this->Encipher($plaintext, $key);
+        } else {
+            $data['Decipher'] = $this->Decipher($plaintext, $key);
+        }
+
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('V_VigenereCipher', $data);

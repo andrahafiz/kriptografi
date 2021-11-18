@@ -24,8 +24,15 @@ class C_SimpleSubCipher extends CI_Controller
         $cipherAlphabet = strtoupper($this->input->post('cipheralphabet'));
         $text = strtoupper($this->input->post('text'));
         $data['Encipher'] = $this->Encipher($text, $cipherAlphabet, $cipherText);
-        $data['Decipher'] = $this->Decipher($cipherText, $cipherAlphabet, $plainText);
-        $data['cipherAlphabet'] = $cipherAlphabet;
+        $data['Decipher'] = $text;
+        $data['text'] = $text;
+        $data['key'] = $cipherAlphabet;
+        // if ($tipe == 'enkripsi') {
+        //     $data['Encipher'] = $this->Encipher($plaintext, $key);
+        // } else {
+        //     $data['Decipher'] = $this->Decipher($plaintext, $key);
+        // }
+
         $this->load->view('Templates/header');
         $this->load->view('Templates/sidebar');
         $this->load->view('V_SubstitutionChiper', $data);

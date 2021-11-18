@@ -32,7 +32,7 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label class="form-label" id="labeltext" for="plaintext">Plain Text</label>
-                                        <input type="text" class="form-control input-air-primary" name="plaintext" id="plaintext" placeholder="Text" autocomplete="on" required style="text-transform:uppercase">
+                                        <input type="text" class="form-control input-air-primary" name="plaintext" id="plaintext" placeholder="Text" autocomplete="on" required style="text-transform:uppercase" onkeypress="return event.charCode < 48 || event.charCode  >57">
                                     </div>
                                 </div>
 

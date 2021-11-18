@@ -49,7 +49,7 @@
                                                         <div class="col">
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="plaintext" id="labeltext">Plain Text</label>
-                                                                <input type="text" class="form-control" name="plaintext" id="plaintext" placeholder="Text" autocomplete="on" required style="text-transform:uppercase">
+                                                                <input type="text" class="form-control" name="plaintext" id="plaintext" placeholder="Text" autocomplete="on" required style="text-transform:uppercase" onkeypress="return event.charCode < 48 || event.charCode  >57">
                                                             </div>
                                                         </div>
 

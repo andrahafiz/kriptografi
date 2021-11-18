@@ -27,7 +27,6 @@
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_Atbash') ?>"><i data-feather="file-text"></i><span>Atbash</span></a></li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_Transposisi') ?>"><i data-feather="file-text"></i><span>Transposisi Cipher</span></a></li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_PlayFair') ?>"><i data-feather="file-text"></i><span>PlayFair</span></a></li>
-
                         <!-- <li class="dropdown"> <a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="hard-drive"></i><span>Ex. Data Tables </span></a>
                             <ul class="nav-submenu menu-content">
                                 <li><a href="datatable-ext-autofill.html">Auto Fill</a></li>
