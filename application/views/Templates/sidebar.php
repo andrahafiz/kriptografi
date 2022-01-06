@@ -18,6 +18,13 @@
                         </li>
                         <li class="sidebar-main-title">
                             <div>
+                                <h6>Kriptografi Moderen</h6>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_AES') ?>"><i data-feather="file-text"></i><span>AES</span></a></li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_RSA') ?>"><i data-feather="file-text"></i><span>RSA</span></a></li>
+                        <li class="sidebar-main-title">
+                            <div>
                                 <h6>Kriptografi Klasik</h6>
                             </div>
                         </li>

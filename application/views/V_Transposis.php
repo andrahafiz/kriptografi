@@ -42,7 +42,7 @@
                                             <p>Kunci untuk sandi transposisi kolumnar adalah kata kunci mis. <tt><i class="fas fa-gingerbread-man"></i></tt>. Panjang baris yang digunakan adalah
                                                 sama dengan panjang kata kunci. Untuk mengenkripsi sepotong teks, mis.</p>
 
-                                            <pre>mempertahankan tembok timur kastil</pre>
+                                            <pre>defend the east wall of the castle</pre>
                                             <p>kami menuliskannya dengan cara khusus dalam beberapa baris (kata kuncinya di sini adalah <tt>GERMAN</tt>):</p>
 
                                             <pre><span style="text-decoration: underline;">G E R M A N</span>

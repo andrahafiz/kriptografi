@@ -80,13 +80,13 @@
                                                 <div class="col">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="keyDPlayfair">Key</label>
-                                                        <input type="text" id="keyDPlayfair" class=" form-control input-air-primary" style="text-transform: uppercase" pattern="[A-Z /s]*" placeholder="key" required="">
+                                                        <input type="text" id="keyDPlayfair" class=" form-control input-air-primary" style="text-transform: uppercase" placeholder="key" required="">
                                                     </div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="textDPlayfair">Cipher Text</label>
-                                                        <input type="text" id="textDPlayfair" class=" form-control input-air-primary" style="text-transform: uppercase" pattern="[A-Z /s]*" placeholder="Cipher Text" required="">
+                                                        <input type="text" id="textDPlayfair" class=" form-control input-air-primary" style="text-transform: uppercase" onkeypress="return event.charCode < 48 || event.charCode  >57" placeholder="Cipher Text" required="">
                                                     </div>
                                                 </div>
                                                 <button type="submit" class="btn btn-secondary">Decrypt</button>
