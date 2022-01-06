@@ -4,10 +4,10 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm">
-                    <h3>AES</h3>
+                    <h3>RC4</h3>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Kriptografi</a></li>
-                        <li class="breadcrumb-item">AES</li>
+                        <li class="breadcrumb-item"><a href="index.html">Kriptografi Modern</a></li>
+                        <li class="breadcrumb-item">RC4</li>
                     </ol>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                                 <div class="col mb-3">
                                     <div class="form-group m-t-5 m-checkbox-inline mb-0 custom-radio-ml">
                                         <div class="radio radio-primary">
-                                            <input id="radioinline1" type="radio" name="tipe" value="enkripsi">
+                                            <input id="radioinline1" type="radio" name="tipe" value="enkripsi" checked>
                                             <label class="astro mb-0" for="radioinline1">Enkripsi</label>
                                         </div>
                                         <div class="radio radio-primary">
@@ -58,7 +58,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <!-- <input class="btn btn-primary" type="submit"></input> -->
-                                    <input type="submit" class="btn btn-primary" name="tombol" value="tombol" />
+                                    <input type="submit" class="btn btn-primary" name="submit" value="submit" />
                                     <input class="btn btn-light" type="reset" value="Reset">
                                 </div>
                                 <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
@@ -74,6 +74,7 @@
                                 </div>
 
                             </div>
+
                             <div class="row">
                                 <div class="col-sm-12 col-xl-6">
                                     <div class="card card-absolute">
@@ -81,32 +82,31 @@
                                             <h5 class="text-white">Encipher</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p id="hasil_encipher"><?= isset($Encipher) ? 'Kosong' : null ?></p>
-                                            <!-- <h6 class="border rounded card-body f-w-300" >
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </h6> -->
-                                            <?= isset($Decipher) ? ' <div class="mt-3">
-                                                <button class="btn btn-primary btn-clipboard" type="button" data-clipboard-action="copy" data-clipboard-target="#hasil_encipher"><i class="fa fa-copy"></i> Copy</button>
+                                            <?php if (isset($Encipher)) { ?>
+                                                <p class="h6 txt-primary f-w-700">Chiper Text</p>
+                                                <p id="hasil_encipher"><?= isset($Encipher) ? $Encipher : null ?></p>
+                                                <p class="h6 txt-primary f-w-700">Hasil Encoding Base64</p>
+                                                <p id="hasil_enc_base64"><?= base64_encode($Encipher) ?></p>
+                                                <?= isset($Encipher) ? ' <div class="mt-3">
+                                                <button class="btn btn-primary btn-clipboard" type="button" data-clipboard-action="copy" data-clipboard-target="#hasil_encipher"><i class="fa fa-copy"></i> Copy Enkripsi Base64</button><p class="text-muted"><br><span>Hasil Enkripsi tidak bisa langsung di baca, maka digunakan Algoritma Base64</span>
                                             </div>' : null ?>
-
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-xl-6">
                                     <div class="card card-absolute">
                                         <div class="card-header bg-secondary">
-                                            <h5 class="text-white">Decipher</h5>
+                                            <h5 class="text-white">Dencipher</h5>
                                         </div>
                                         <div class="card-body">
-                                            <p id="hasil_decipher"><?= isset($Decipher) ? 'Kosong' : null ?></p>
+
+                                            <p class="h6 txt-secondary f-w-700" id="hasil_decipher"><?= isset($Dencipher) ? $Dencipher : null ?></p>
                                             <!-- <h6 class="border rounded card-body f-w-300" >
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                             </h6> -->
-                                            <?= isset($Decipher) ? ' <div class="mt-3">
-                                                <button class="btn btn-primary btn-clipboard" type="button" data-clipboard-action="copy" data-clipboard-target="#hasil_decipher"><i class="fa fa-copy"></i> Copy</button>
-                                            </div>' : null ?>
+
 
                                         </div>
                                     </div>

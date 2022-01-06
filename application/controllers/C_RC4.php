@@ -1,7 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_AES extends CI_Controller
+use \phpseclib3\Net\SFTP;
+use \phpseclib3\Crypt\RC4;
+
+class C_RC4 extends CI_Controller
 {
 
     /**
@@ -32,21 +35,43 @@ class C_AES extends CI_Controller
     }
     public function index()
     {
-        $this->load->library('encryption');
-        $this->encryption->initialize(
-            array(
-                'cipher' => 'aes-256',
-                'mode' => 'asf',
-                'key' => 'YToxOntpOjA7czoxMjg6IheE52WCOIgKlibYk93XtX8OUISJMjv2Du+IGdKI233qtScVDYgn9teic3wCa03WXUvwxhpsAMcP9KKgrF+xdmN+SD5aQEvoellFWDPu56Qds1SeYiEQxJIh6tuNapti454UYTMY4ZwXKSzDZZoBq/F6g/Hs9pFOe7yOnCwJa4OlIjt9',
-                'driver' => 'mcrypt'
-            )
-        );
-        $plain_text = 'This is a plain-text message!';
-        $ciphertext = $this->encryption->encrypt($plain_text);
-        echo html_entity_decode('&ltp&gt;', ENT_QUOTES, 'UTF-8');
-        // Outputs: This is a plain-text message!
-        echo $this->encryption->encrypt($plain_text);
-        echo $this->encryption->decrypt($ciphertext);
+        include 'vendor/autoload.php';
+
+
+        // $size = 10 * 1024;
+        // $plaintext = 'andra';
+        // for ($i = 0; $i < $size; $i++) {
+        //     $plaintext .= 'a';
+        // }
+
+        // echo $rc4->encrypt($plaintext);
+        // echo $rc4->decrypt($rc4->encrypt($plaintext));
+
+
+        // // $sftp = new SFTP();
+        // // $sftp = new \phpseclib3\Net\SFTP('123.456.789.000', '22', '10');
+
+        // // echo $sftp;
+        // // include(APPPATH . 'third_party\phpseclib\Crypt\RC4.php');
+        // $cipher = new RC4();
+        // $cipher->setKey('asd1231asd123ad/');
+
+        // // $size = 10 * 1024;
+        // $plaintext = $text;
+        // // echo base64_encode($cipher->encrypt($plaintext));
+        // // echo base64_decode(base64_encode($cipher->encrypt($plaintext)));
+        // echo $cipher->encrypt($plaintext);
+
+        // echo "<br>";
+        // echo $cipher->decrypt($cipher->encrypt($plaintext));
+        // die();
+
+        // $plain_text = 'This is a plain-text message!';
+        // $ciphertext = $this->encryption->encrypt($plain_text);
+        // echo html_entity_decode('&ltp&gt;', ENT_QUOTES, 'UTF-8');
+        // // Outputs: This is a plain-text message!
+        // echo $this->encryption->encrypt($plain_text);
+        // echo $this->encryption->decrypt($ciphertext);
         // //$key should have been previously generated in a cryptographically safe way, like openssl_random_pseudo_bytes
         // //$key previously generated safely, ie: openssl_random_pseudo_bytes
 
@@ -77,13 +102,58 @@ class C_AES extends CI_Controller
         // // } else {
         // //     $data['Encode'] = Null;
 
-        // $data['key'] =  $this->input->post('key');
-        // $data['text'] = $this->input->post('plaintext');
-        // // }
-        // $this->load->view('Templates/header');
-        // $this->load->view('Templates/sidebar');
-        // $this->load->view('V_RSA', $data);
-        // $this->load->view('Templates/footer');
+        // $data['key'] =   $key;
+        // $data['text'] =  $text;
+
+        // // // }
+        // var_dump($_POST['submit']);
+        // die();
+
+        if (isset($_POST['submit'])) {
+            $key = $this->input->post('key');
+            $tipe = $this->input->post('tipe');
+            $plaintext = $this->input->post('plaintext');
+            $rc4 = new \phpseclib3\Crypt\RC4();
+
+            $rc4->setKey($key);
+            // $key = $this->input->post('key');
+            if ($tipe == 'enkripsi') {
+                $data['Encipher'] =  $rc4->encrypt($plaintext);
+                // echo $rc4->encrypt($plaintext);
+                // die();
+                // $data['Dencipher'] = $rc4->decrypt($data['Encipher']);
+                $data['Dencipher'] = null;
+            } else {
+                $data['Encipher'] =  null;
+                // echo $rc4->encrypt($plaintext);
+                // die();
+                $data['Dencipher'] = $rc4->decrypt(base64_decode($plaintext));
+                // $rc4->decrypt($rc4->encrypt($plaintext));
+            }
+
+            $data['key'] =  $key;
+            $data['text'] =  $plaintext;
+            // $data['key'] =  'ASD';
+        } else {
+            // $data['Dencipher'] = 'Else';
+            // $key = $this->input->post('key');
+            // // $plaintext = $this->input->post('plaintext');
+            // $plaintext = 'asd';
+            // $rc4 = new \phpseclib3\Crypt\RC4();
+
+            // $rc4->setKey('123');
+
+            // $key = $this->input->post('key');
+            $data['Encipher'] =  null;
+            $data['Dencipher'] = null;
+            $data['key'] =  null;
+            $data['text'] =  null;
+        }
+
+        $this->load->view('Templates/header');
+        $this->load->view('Templates/sidebar');
+        $this->load->view('V_RC4', $data);
+        $this->load->view('Templates/footer');
     }
 
     public function reset()
