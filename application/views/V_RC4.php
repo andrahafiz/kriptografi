@@ -58,8 +58,10 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <!-- <input class="btn btn-primary" type="submit"></input> -->
-                                    <input type="submit" class="btn btn-primary" name="submit" value="submit" />
-                                    <input class="btn btn-light" type="reset" value="Reset">
+                                    <input type="submit" class="btn btn-primary" name="submit" value="Proses" />
+                                    <a href="<?= base_url('C_RC4') ?>">
+                                        <button class=" btn btn-light" type="button">Reset
+                                    </a>
                                 </div>
                                 <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <!-- <input class="btn btn-primary" type="submit"></input> -->
@@ -88,7 +90,7 @@
                                                 <p class="h6 txt-primary f-w-700">Hasil Encoding Base64</p>
                                                 <p id="hasil_enc_base64"><?= base64_encode($Encipher) ?></p>
                                                 <?= isset($Encipher) ? ' <div class="mt-3">
-                                                <button class="btn btn-primary btn-clipboard" type="button" data-clipboard-action="copy" data-clipboard-target="#hasil_encipher"><i class="fa fa-copy"></i> Copy Enkripsi Base64</button><p class="text-muted"><br><span>Hasil Enkripsi tidak bisa langsung di baca, maka digunakan Algoritma Base64</span>
+                                                <button class="btn btn-primary btn-clipboard" type="button" data-clipboard-action="copy" data-clipboard-target="#hasil_enc_base64"><i class="fa fa-copy"></i> Copy Enkripsi Base64</button><p class="text-muted"><br><span>Hasil Enkripsi tidak bisa langsung di baca, maka digunakan Enkripsi Base64</span>
                                             </div>' : null ?>
                                             <?php } ?>
                                         </div>

@@ -23,6 +23,9 @@
                         </li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_Blowfish') ?>"><i data-feather="file-text"></i><span>Blowfish</span></a></li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_RC4') ?>"><i data-feather="file-text"></i><span>RC4</span></a></li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_AES') ?>"><i data-feather="file-text"></i><span>AES</span></a></li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_DES') ?>"><i data-feather="file-text"></i><span>DES</span></a></li>
+                        <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_3DES') ?>"><i data-feather="file-text"></i><span>3DES</span></a></li>
                         <li class="dropdown"><a class="nav-link menu-title link-nav" href="<?= base_url('C_RSA') ?>"><i data-feather="file-text"></i><span>RSA</span></a></li>
                         <li class="sidebar-main-title">
                             <div>

@@ -4,10 +4,10 @@
         <div class="page-header">
             <div class="row">
                 <div class="col-sm">
-                    <h3>RSA</h3>
+                    <h3>3DES</h3>
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Kriptografi</a></li>
-                        <li class="breadcrumb-item">RSA</li>
+                        <li class="breadcrumb-item"><a href="index.html">Kriptografi Modern</a></li>
+                        <li class="breadcrumb-item">3DES</li>
                     </ol>
                 </div>
             </div>
@@ -22,34 +22,19 @@
                     <!-- <form class="form theme-form" method="post" action="<?php echo base_url('C_CaesarCipher/test') ?>"> -->
                     <form class="form theme-form" method="post">
                         <div class="card-body">
-                            <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Holy !</strong> You can check in on some of those fields below.
-                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" data-bs-original-title="" title=""></button>
-                            </div> -->
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
-                                        <label class="form-label" for="plaintext">Private Key</label>
-                                        <textarea class="form-control form-control input-air-primary" id="privatekey" name="privatekey" rows="10" required style="resize:none;"><?= $PriveteKey ?></textarea>
-                                        <div class="mt-3 text-center">
-                                            <!-- <button class="btn btn-primary btn-sm btn-clipboard " type="button" data-clipboard-action="copy" data-clipboard-target="#privatekey"><i class="fa fa-copy"></i> Copy Private Key</button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label class="form-label" for="plaintext">Public Key</label>
-                                        <textarea class="form-control form-control input-air-primary" id="publickey" name="publickey" name="privatekey" rows="10" required style="resize:none;"><?= $PublicKey ?></textarea>
-                                        <div class="mt-3 text-center">
-                                            <!-- <button class="btn btn-primary  btn-sm btn-clipboard c" type="button" data-clipboard-action="copy" data-clipboard-target="#publickey"><i class="fa fa-copy"></i> Copy Public Key</button> -->
-                                        </div>
+                                        <label class="form-label" for="plaintext">Key</label>
+                                        <input class="form-control input-air-primary" name="key" id="key" type="number" placeholder="Key" min="0" style="text-transform:uppercase" required>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row">
+                            <div class="row">
                                 <div class="col mb-3">
                                     <div class="form-group m-t-5 m-checkbox-inline mb-0 custom-radio-ml">
                                         <div class="radio radio-primary">
-                                            <input id="radioinline1" type="radio" name="tipe" value="enkripsi">
+                                            <input id="radioinline1" type="radio" name="tipe" value="enkripsi" checked>
                                             <label class="astro mb-0" for="radioinline1">Enkripsi</label>
                                         </div>
                                         <div class="radio radio-primary">
@@ -58,7 +43,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <div class="row">
                                 <div class="col">
@@ -71,17 +56,18 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-12 col-xl-12 text-center mt-3 mb-3">
+                                <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <!-- <input class="btn btn-primary" type="submit"></input> -->
                                     <input type="submit" class="btn btn-primary" name="submit" value="Proses" />
-                                    <a href="<?= base_url('C_RSA/reset') ?>">
+                                    <a href="<?= base_url('C_RC4') ?>">
                                         <button class=" btn btn-light" type="button">Reset
                                     </a>
                                 </div>
-                                <div class="col-sm-12 col-xl-12 text-center mt-2 mb-5">
+                                <div class="col-sm-12 col-xl-12 text-center mt-3 mb-5">
                                     <!-- <input class="btn btn-primary" type="submit"></input> -->
                                     <p class="h5 txt-primary">Text : <small class="txt-dark"><?php if (isset($text)) echo $text ?>
                                         </small></p>
+                                    <p class="h5 txt-primary">Key : <small class="txt-dark"><?php if (isset($key)) echo $key ?></small></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -90,6 +76,7 @@
                                 </div>
 
                             </div>
+
                             <div class="row">
                                 <div class="col-sm-12 col-xl-6">
                                     <div class="card card-absolute">
